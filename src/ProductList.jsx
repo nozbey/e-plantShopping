@@ -259,11 +259,11 @@ function ProductList() {
     }
 
     const handleAddToCart = (product) => {
-    dispatch(addItem(product));
-    setAddedToCart((prevState) => ({
-        ...prevState,
-        [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
-    }));
+        dispatch(addItem(product));
+        setAddedToCart((prevState) => ({
+            ...prevState,
+            [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
+        }));
     };
 
     const totalItems = () => {
@@ -302,7 +302,7 @@ function ProductList() {
                                         <div key={plantId} className="product-card">
                                             <img src={plant.image} alt={plant.name} className="product-image" />
                                             <div className="product-title">{plant.name}</div>
-                                            <h2 className="product-cost" style={{color: 'red'}}>{plant.cost}</h2>
+                                            <h2 className="product-cost" style={{ color: 'red' }}>{plant.cost}</h2>
                                             <div className="product-description">{plant.description}</div>
                                             <br />
                                             <button style={{ backgroundColor: isPlantInCart(plant.name) ? "gray" : "#615EFC" }}
